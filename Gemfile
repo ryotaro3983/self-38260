@@ -57,3 +57,5 @@ group :production do
 # Renderでの実行時にPostgreSQLを使用するため必要なGem
   gem 'pg'
 end
+
+gem 'devise'
