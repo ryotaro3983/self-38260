@@ -57,3 +57,5 @@
 
 - belongs_to :user
 - belongs_to :content
+
+# 空push用書き込み
