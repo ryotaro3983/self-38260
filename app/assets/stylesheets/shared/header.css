@@ -1,0 +1,70 @@
+.top-page-header {
+  background-color: #fdf5e6;
+}
+
+.banner {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.top-image {
+  width: calc(100vw - 30vw);
+  height: calc(100vh - 30vh);
+}
+
+.top-menu-bar {
+  background-color: #fdf5e6;
+  height: 60px;
+  width: 100%;
+}
+
+.menu {
+  font-size: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-left {
+  display: flex;
+  list-style: none;
+}
+
+.menu-top-link {
+  margin-right: 3vw;
+  text-decoration: none;
+  color: #333333;
+}
+
+.menu-post-link {
+  text-decoration: none;
+  color: #333333;
+}
+
+.menu-right {
+  display: flex;
+  list-style: none;
+}
+
+.user-nickname {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.logout {
+  text-decoration: none;
+  color: #333333;
+}
+
+.login {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
+
+.sign-up {
+  text-decoration: none;
+  margin-right: 3vw;
+  color: #333333;
+}
