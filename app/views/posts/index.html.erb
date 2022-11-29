@@ -15,8 +15,9 @@
       <div class="post-imaga-box">
         <%= image_tag post.image.variant(resize: '200x200') if post.image.attached? %>
       </div>
-        <p><%= post.text %></p>
       <div class="post-text-box">
+        <p><%= post.text %></p>
+        <span><%= link_to "編集", edit_post_path(post.id)%></span>
       </div>
     </div>
     <% end %>

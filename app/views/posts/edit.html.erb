@@ -1,0 +1,9 @@
+<%= render "shared/header" %>
+
+<h1>編集画面だよ</h1>
+
+<%= form_with model: @post, local: true do |f| %>
+  <%= f.text_area :text, placeholder: "つぶやき・メモ・アウトプットなど",rows: "10" %>
+  <%= f.file_field :image %>
+  <%= f.submit "投稿する" %>
+<% end %>
