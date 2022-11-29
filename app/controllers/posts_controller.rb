@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :edit]
-  before_action :move_to_index, only: [:edit]
+  before_action :authenticate_user!, only: [:new, :edit, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @posts = Post.includes(:user).order("created_at DESC")
@@ -8,6 +8,15 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+  end
+
+  def create
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :new
+    end
   end
 
   def edit
@@ -23,13 +32,10 @@ class PostsController < ApplicationController
     end
   end
 
-  def create
-    @post = Post.new(post_params)
-    if @post.save
-      redirect_to root_path
-    else
-      render :new
-    end
+  def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to root_path
   end
 
   private
