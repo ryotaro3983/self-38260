@@ -10,14 +10,16 @@
   <%# <%= render partial: "post" %>
 
   <% @posts.each do |post| %>
-  <div class="post">
-    <div class="post-imaga-box">
-      <%= image_tag post.image.variant(resize: '200x200') if post.image.attached? %>
+    <% if user_signed_in? && current_user.id == post.user_id %>
+    <div class="post">
+      <div class="post-imaga-box">
+        <%= image_tag post.image.variant(resize: '200x200') if post.image.attached? %>
+      </div>
+        <p><%= post.text %></p>
+      <div class="post-text-box">
+      </div>
     </div>
-      <p><%= post.text %></p>
-    <div class="post-text-box">
-    </div>
-  </div>
+    <% end %>
   <% end %>
 
 
