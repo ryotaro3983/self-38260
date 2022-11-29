@@ -1,7 +1,5 @@
 <%= render "shared/header" %>
 
-<h1>ポスト投稿ページ</h1>
-
 <div class="post-area">
 
   <div class="post-new">
@@ -9,10 +7,19 @@
       <%= link_to "投稿する", new_post_path %>
     </div>
   </div>
+  <%# <%= render partial: "post" %>
 
-
+  <% @posts.each do |post| %>
+  <div class="post">
+    <div class="post-imaga-box">
+      <%= image_tag post.image.variant(resize: '200x200') if post.image.attached? %>
+    </div>
+      <p><%= post.text %></p>
+    <div class="post-text-box">
+    </div>
+  </div>
+  <% end %>
 
 
 
 </div>
-
