@@ -1,0 +1,11 @@
+<%= render "shared/header" %>
+
+<h1>投稿作成ページ</h1>
+
+<%= form_with model: @content, local: true do |f| %>
+  <%= f.file_field :image %>
+  <%= f.text_field :title, placeholder: "タイトル" %>
+  <%= f.text_field :genre, placeholder: "ジャンル" %>
+  <%= f.text_field :memo, placeholder: "メモやコメントなど" %>
+  <%= f.submit "投稿する" %>
+<% end %>
