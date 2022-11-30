@@ -6,6 +6,6 @@
   <%= f.file_field :image %>
   <%= f.text_field :title, placeholder: "タイトル" %>
   <%= f.text_field :genre, placeholder: "ジャンル" %>
-  <%= f.text_field :memo, placeholder: "メモやコメントなど" %>
+  <%= f.text_field :memo, placeholder: "メモやコメントなど", maxlength: "200" %>
   <%= f.submit "投稿する" %>
 <% end %>

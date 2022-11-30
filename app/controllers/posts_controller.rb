@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :move_to_index, only: [:edit, :destroy]
 
   def index
-    @posts = Post.includes(:user).order("created_at DESC")
+    @posts = Post.includes(:user).order('created_at DESC')
   end
 
   def new
@@ -46,8 +46,8 @@ class PostsController < ApplicationController
 
   def move_to_index
     @posts = Post.find(params[:id])
-    if current_user.id != @posts.user_id
-      redirect_to action: :index
-    end
+    return unless current_user.id != @posts.user_id
+
+    redirect_to action: :index
   end
 end

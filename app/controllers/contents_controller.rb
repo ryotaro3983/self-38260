@@ -1,7 +1,6 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
-    
   end
 
   def new
@@ -11,7 +10,7 @@ class ContentsController < ApplicationController
   def create
     @content = Content.new(content_params)
     if @content.save
-      redirect_to action: "index"
+      redirect_to action: 'index'
     else
       render :new
     end
