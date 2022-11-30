@@ -6,8 +6,8 @@
     <div class="top-menu-bar">
       <div class="menu">
         <ul class="menu-left">
-          <li><%= link_to "TOP", "/", class: "menu-top-link" %></li>
-          <li><%= link_to "つぶやき", "#", class: "menu-post-link" %></li>
+          <li><%= link_to "つぶやき", "/", class: "menu-posts-link" %></li>
+          <li><%= link_to "コンテンツ", contents_path, class: "menu-contents-link" %></li>
         </ul>
         <ul class="menu-right">
           <% if user_signed_in? %>

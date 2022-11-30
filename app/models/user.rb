@@ -10,4 +10,5 @@ class User < ApplicationRecord
   validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' },
                        length: { maximum: 40 }
   has_many :posts
+  has_many :contents
 end

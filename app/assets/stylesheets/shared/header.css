@@ -21,22 +21,25 @@
 
 .menu {
   font-size: 20px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .menu-left {
   display: flex;
   list-style: none;
+  margin-left: 10px;
 }
 
-.menu-top-link {
-  margin-right: 3vw;
+.menu-contents-link {
+  margin-left: 3vw;
   text-decoration: none;
   color: #333333;
 }
 
-.menu-post-link {
+.menu-posts-link {
   text-decoration: none;
   color: #333333;
 }
