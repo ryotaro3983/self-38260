@@ -3,32 +3,32 @@
 <h2><%= link_to "投稿する", new_content_path %></h2>
 
 <div class="content-area">
-  <div class="content">
-    <div class="content-image-area">
-        <%= link_to image_tag("new_content_link.jpg", class:"content-image"), new_content_path %>
-    </div>
-    <div>
-      <h3>投稿しよう！</h3>
-    </div>
-  </div>
-  <% @contents.each do |content| %>
+  <% if user_signed_in? && current_user.id == content.user_id %>
     <div class="content">
       <div class="content-image-area">
-        <% if content.image.attached? %>
-          <%= link_to image_tag(content.image, class:"content-image"), "#" %>
-        <% else %>
-          <%= link_to image_tag("dummy_image.jpg", class:"dummy-image"), "#"%>
-        <% end %>
+          <%= link_to image_tag("new_content_link.jpg", class:"content-image"), new_content_path %>
       </div>
-      <div class="content_lists">
-        <ul class="content_list">
-          <li><%= content.title %></li>
-          <li>ジャンル：<%= content.genre %></li>
-          <li>コメント：<%= content.memo %></li>
-        </ul>
+      <div>
+        <h3>投稿しよう！</h3>
       </div>
     </div>
+    <% @contents.each do |content| %>
+      <div class="content">
+        <div class="content-image-area">
+          <% if content.image.attached? %>
+            <%= link_to image_tag(content.image, class:"content-image"), content_path(content.id) %>
+          <% else %>
+            <%= link_to image_tag("dummy_image.jpg", class:"dummy-image"), content_path(content.id) %>
+          <% end %>
+        </div>
+        <div class="content_lists">
+          <ul class="content_list">
+            <li><%= link_to content.title, content_path(content.id) %></li>
+            <li>ジャンル：<%= content.genre %></li>
+            <li>コメント：<%= content.memo %></li>
+          </ul>
+        </div>
+      </div>
+    <% end %>
   <% end %>
 </div>
-
-<h3>ここまで</h3>
