@@ -21,6 +21,8 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
+    @reviews = @content.reviews.includes(:user)
+    @review = Review.new
   end
   
   def edit
