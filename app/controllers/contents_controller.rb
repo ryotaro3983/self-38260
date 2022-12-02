@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy]
   before_action :move_to_index, only:[:edit, :destroy]
   
   def index
@@ -34,6 +34,12 @@ class ContentsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+    redirect_to action: 'index'
   end
 
   private
