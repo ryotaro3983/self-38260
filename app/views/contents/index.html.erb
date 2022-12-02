@@ -1,18 +1,16 @@
 <%= render "shared/header" %>
 
-<h2><%= link_to "投稿する", new_content_path %></h2>
-
 <div class="content-area">
-  <% if user_signed_in? && current_user.id == content.user_id %>
-    <div class="content">
-      <div class="content-image-area">
-          <%= link_to image_tag("new_content_link.jpg", class:"content-image"), new_content_path %>
-      </div>
-      <div>
-        <h3>投稿しよう！</h3>
-      </div>
+  <div class="content">
+    <div class="content-image-area">
+        <%= link_to image_tag("new_content_link.jpg", class:"content-image"), new_content_path %>
     </div>
-    <% @contents.each do |content| %>
+    <div>
+      <h3>投稿しよう！</h3>
+    </div>
+  </div>
+  <% @contents.each do |content| %>
+    <% if user_signed_in? && current_user.id == content.user_id %>
       <div class="content">
         <div class="content-image-area">
           <% if content.image.attached? %>

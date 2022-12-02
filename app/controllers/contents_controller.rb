@@ -1,5 +1,5 @@
 class ContentsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :show]
+  before_action :authenticate_user!, only: [:new, :show, :edit, :destroy]
   before_action :move_to_index, only:[:edit, :destroy]
   
   def index
@@ -21,6 +21,25 @@ class ContentsController < ApplicationController
 
   def show
     @content = Content.find(params[:id])
+  end
+  
+  def edit
+    @content = Content.find(params[:id])
+  end
+
+  def update
+    @content = Content.find(params[:id])
+    if @content.update(content_params)
+      redirect_to content_path(@content.id)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    content = Content.find(params[:id])
+    content.destroy
+    redirect_to action: 'index'
   end
 
   private
