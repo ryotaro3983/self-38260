@@ -11,4 +11,5 @@ class User < ApplicationRecord
                        length: { maximum: 40 }
   has_many :posts
   has_many :contents
+  has_many :reviews
 end

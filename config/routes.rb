@@ -3,5 +3,7 @@ Rails.application.routes.draw do
   root to: "posts#index"
   resources :posts
   resources :users, only: :show
-  resources :contents
+  resources :contents do
+    resources :reviews
+  end
 end
