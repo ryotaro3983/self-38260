@@ -1,10 +1,31 @@
 class ReviewsController < ApplicationController
+  before_action :authenticate_user!, only: [:create, :edit, :destroy]
 
   def create
     @review = Review.new(review_params)
-    if @review.save
-      redirect_to content_path(params[:content_id])
-    end
+    return unless @review.save
+
+    redirect_to content_path(params[:content_id])
+  end
+
+  def edit
+    @content = Content.find(params[:content_id])
+    @review = Review.find(params[:id])
+  end
+
+  def update
+    @content = Content.find(params[:content_id])
+    @review = Review.find(params[:id])
+    return unless @review.update(review_params)
+
+    redirect_to content_path(params[:content_id])
+  end
+
+  def destroy
+    content = Content.find(params[:content_id])
+    review = Review.find(params[:id])
+    review.destroy
+    redirect_to content_path(params[:content_id])
   end
 
   private

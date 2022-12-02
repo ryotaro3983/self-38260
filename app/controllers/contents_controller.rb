@@ -1,7 +1,7 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :show, :edit, :destroy]
-  before_action :move_to_index, only:[:edit, :destroy]
-  
+  before_action :move_to_index, only: [:edit, :destroy]
+
   def index
     @contents = Content.includes(:user).order('created_at DESC')
   end
@@ -24,7 +24,7 @@ class ContentsController < ApplicationController
     @reviews = @content.reviews.includes(:user)
     @review = Review.new
   end
-  
+
   def edit
     @content = Content.find(params[:id])
   end

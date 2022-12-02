@@ -18,19 +18,19 @@ RSpec.describe Review, type: :model do
     it 'commentが201文字以上では登録できない' do
       @review.comment = Faker::Lorem.characters(201)
       @review.valid?
-      expect(@review.errors.full_messages).to include("Comment is too long (maximum is 200 characters)")
+      expect(@review.errors.full_messages).to include('Comment is too long (maximum is 200 characters)')
     end
 
     it 'userが紐付いていないと登録できない' do
       @review.user = nil
       @review.valid?
-      expect(@review.errors.full_messages).to include("User must exist")
+      expect(@review.errors.full_messages).to include('User must exist')
     end
 
     it 'contentが紐付いていないと登録できない' do
       @review.content = nil
       @review.valid?
-      expect(@review.errors.full_messages).to include("Content must exist")
+      expect(@review.errors.full_messages).to include('Content must exist')
     end
   end
 end
