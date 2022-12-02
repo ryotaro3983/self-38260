@@ -1,6 +1,7 @@
 class ContentsController < ApplicationController
   before_action :authenticate_user!, only: [:new]
   def index
+    @contents = Content.includes(:user).order('created_at DESC')
   end
 
   def new
