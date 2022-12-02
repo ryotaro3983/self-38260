@@ -1,0 +1,16 @@
+<div class="content-show">
+  <div class="content-image-area">
+    <% if @content.image.attached? %>
+      <%= image_tag(@content.image, class:"content-image")%>
+    <% else %>
+      <%= image_tag("dummy_image.jpg", class:"dummy-image")%>
+    <% end %>
+  </div>
+  <div class="content_lists">
+    <ul class="content_list">
+      <li><%= @content.title %></li>
+      <li>ジャンル：<%= @content.genre %></li>
+      <li>コメント：<%= @content.memo %></li>
+    </ul>
+  </div>
+</div>
