@@ -1,42 +1,47 @@
-<h2>Sign up</h2>
+<div class="sign-up-main">
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "shared/error_messages", resource: resource %>
+  <h1 class="sign-up-title">ユーザー登録</h1>
 
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_area :nickname, autofocus: true, autocomplete: "nickname" %>
+  <div class="registration-form">
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <%= f.label :nickname, "ユーザー名" %><br />
+        <%= f.text_area :nickname, autofocus: true, autocomplete: "nickname" ,class:"user-input", rows: 1 %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email, "メールアドレス" %><br />
+        <%= f.email_field :email, autocomplete: "email" ,class:"user-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password, "パスワード" %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %> 文字以上・半角英数字必須)</em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" ,class:"user-input" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation, "パスワード(確認用)" %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" ,class:"user-input" %>
+      </div>
+
+      <div class="form-element">
+        <div class="form-text-wrap">
+          <label class="form-text">プロフィール</label>
+          <span class="form-note">任意(あとから記入できます)</span>
+        </div>
+        <%= f.text_area :profile ,class:"user-input", rows: 5 %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "登録", class:"submit-button" %>
+      </div>
+    <% end %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="form-element">
-    <div class="form-text-wrap">
-      <label class="form-text">プロフィール</label>
-      <span class="form-note">任意(あとから記入できます)</span>
-    </div>
-    <%= f.text_area :profile %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <p class="top-link"><%= link_to "TOPページへ", root_path %></p>
+</div>
