@@ -1,10 +1,47 @@
 .post {
-  width: 400px;
-  border: 1px solid #000;
-  margin-top: 10px;
+  margin: 10px;
+  font-size: 15px;
 }
 
-.post-area {
-  height: 100vh;
-  background-color: #f5f5f5
+.box-posts {
+  height: 100%;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.box-post {
+  width: calc(100vw - 50%);
+  border: 1px solid #000;
+  margin: 15px auto;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.date-post {
+  font-size: 12px;
+  text-align: right;
+  color: #708090;
+}
+
+.box-post-image {
+  margin: 5px 5px 5px 10px;
+}
+
+.post-image {
+  border: 1px solid #d3d3d3;
+}
+
+.btn-option {
+  font-size: 12px;
+  text-align: right;
+}
+
+.btn-option a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: #708090;
+}
+
+.btn-dlt {
+  margin-left: 30px;
 }
