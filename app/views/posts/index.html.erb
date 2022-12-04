@@ -9,6 +9,7 @@
   </div>
   <%# <%= render partial: "post" %>
 
+<%# ツイート部分 %>
   <% @posts.each do |post| %>
     <% if user_signed_in? && current_user.id == post.user_id %>
     <div class="box-post">
@@ -20,7 +21,7 @@
           </div>
         <% end %>
         <div class="post-text-box">
-          <p><%= post.text %></p>
+          <p><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
           <div class="btn-option">
             <span><%= link_to "編集", edit_post_path(post.id), class:"btn-dlt"%></span>
             <span><%= link_to "削除", post_path(post.id), method: :delete %></span>
@@ -30,7 +31,6 @@
     </div>
     <% end %>
   <% end %>
-
-
+<%# ツイート部分 %>
 
 </div>

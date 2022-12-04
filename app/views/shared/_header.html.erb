@@ -7,16 +7,16 @@
     <div class="top-menu-bar">
       <div class="menu">
         <ul class="menu-left">
-          <li><%= link_to "つぶやき", "/", class: "menu-posts-link" %></li>
-          <li><%= link_to "コンテンツ", contents_path, class: "menu-contents-link" %></li>
+          <li><%= link_to "つぶやき", "/", class: "text-header" %></li>
+          <li><%= link_to "コンテンツ", contents_path, class: "text-header" %></li>
         </ul>
         <ul class="menu-right">
           <% if user_signed_in? %>
-            <li><%= link_to "マイページ", user_path(current_user.id), class: "user-nickname" %></li>
-            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></li>
+            <li><%= link_to "マイページ", user_path(current_user.id), class: "text-header" %></li>
+            <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-header" %></li>
           <% else %>
-            <li><%= link_to "ログイン", new_user_session_path, class:"login" %></li>
-            <li><%= link_to "ユーザー登録", new_user_registration_path, class: "sign-up" %></li>
+            <li><%= link_to "ログイン", new_user_session_path, class:"text-heaer" %></li>
+            <li><%= link_to "ユーザー登録", new_user_registration_path, class: "text-header" %></li>
           <% end %>
         </ul>
       </div>
