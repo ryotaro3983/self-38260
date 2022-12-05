@@ -31,9 +31,9 @@ RSpec.describe Content, type: :model do
         expect(@content.errors.full_messages).to include("Genre can't be blank")
       end
       it 'memoが201文字以上では保存できない' do
-        @content.memo = Faker::Lorem.characters(number: 201)
+        @content.memo = Faker::Lorem.characters(number: 61)
         @content.valid?
-        expect(@content.errors.full_messages).to include('Memo is too long (maximum is 200 characters)')
+        expect(@content.errors.full_messages).to include('Memo is too long (maximum is 60 characters)')
       end
       it 'userが紐付いていないと保存できない' do
         @content.user = nil
