@@ -17,11 +17,11 @@
         <p class="date-post"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
         <% if post.image.attached? %>
           <div class="box-post-image">
-            <%= image_tag post.image, width:"100%", class:"post-image" %>
+            <%= image_tag post.image, class:"post-image" %>
           </div>
         <% end %>
         <div class="post-text-box">
-          <p><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
+          <p class="text-post"><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
           <div class="btn-option">
             <span><%= link_to "編集", edit_post_path(post.id), class:"btn-dlt"%></span>
             <span><%= link_to "削除", post_path(post.id), method: :delete %></span>

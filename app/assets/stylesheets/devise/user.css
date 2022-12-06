@@ -55,7 +55,9 @@ form input[type="submit"] {
   border-radius: 15px;
   color: black;
   border: 0;
-  font-size: 17px;
+  font-size: 13px;
+  width: 60%;
+  height: 30px;
 }
 
 form input[type="submit"]:hover {
