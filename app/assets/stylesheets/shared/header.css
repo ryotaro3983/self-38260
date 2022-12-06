@@ -1,6 +1,4 @@
-.top-page-header {
-  background-color: #fdf5e6;
-}
+
 
 .banner {
   display: flex;
@@ -9,21 +7,25 @@
 }
 
 .top-image {
-
+  height: 100%;
+  width: 100%;
 }
 
 .top-menu-bar {
-  background-color: #fdf5e6;
+  background-color: #f0f8ff;
   height: 60px;
   width: 100%;
+  border-top: 1px solid #333333;
+  border-bottom: 1px solid #333333;
 }
 
 .menu {
   font-size: 20px;
   height: 60px;
   display: flex;
-  justify-content: space-between;
+  justify-content:space-around;
   align-items: center;
+  font-size: 18px;
 }
 
 .menu-left {
@@ -48,25 +50,12 @@
   list-style: none;
 }
 
-.user-nickname {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.logout {
+.text-header {
+  margin-left: 3vw;
   text-decoration: none;
   color: #333333;
 }
 
-.login {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
-.sign-up {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+.text-header:hover {
+  color: #a9a9a9;
 }

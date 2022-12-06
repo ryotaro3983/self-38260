@@ -1,0 +1,122 @@
+.box-register {
+  height: 100vh;
+  background-color: #f5f5f5;
+
+}
+
+.register-title {
+  padding: 60px 0 50px 0;
+  text-align: center;
+  font-size: 30px;
+}
+
+.registration-form {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid #696969;
+  border-radius: 10px;
+}
+
+.user-input {
+  width: 100%;
+}
+
+.field {
+  margin: 20px auto;
+  font-size: 15px;
+}
+
+.form-element {
+  margin-top: 20px;
+}
+
+.submit-button {
+  display: block;
+  margin: 20px auto;
+  width: 80%;
+}
+
+.top-link {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.top-link a {
+  text-decoration: none;
+  color: black;
+}
+
+
+form input[type="submit"] {
+  background-color: #ffdab9;
+  border-radius: 15px;
+  color: black;
+  border: 0;
+  font-size: 13px;
+  width: 60%;
+  height: 30px;
+}
+
+form input[type="submit"]:hover {
+  background-color: #ffe4c4;
+}
+
+.form-text-wrap {
+  font-size: 15px;
+}
+
+/* ログイン画面 */
+
+.box-login {
+  height: 100vh;
+  background-color: #f5f5f5;
+}
+
+.text-newusr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-newusr:before,
+.text-newusr:after {
+  border-top: 1px solid black;
+  content: "";
+  width: 40px;
+}
+
+.text-newusr:before {
+  margin-right: 10px;
+}
+
+.text-newusr:after {
+  margin-left: 10px;
+}
+
+.link-newusr {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 15px;
+}
+
+.link-newusr a {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  background-color: #dcdcdc;
+  height: 26px;
+  margin-top: 20px;
+  border-radius: 15px;
+  border: 0;
+  padding-top: 5px;
+}
+
+.link-newusr-button {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
