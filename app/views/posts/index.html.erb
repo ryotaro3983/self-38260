@@ -2,14 +2,12 @@
 
 <div class="box-posts">
 
-  <div class="post-new">
-    <div class="post-new-button">
-      <%= link_to "投稿する", new_post_path %>
-    </div>
+  <div class="btn-new-post">
+    <%= link_to "投稿する", new_post_path %>
   </div>
   <%# <%= render partial: "post" %>
 
-<%# ツイート部分 %>
+<%# ポスト部分 %>
   <% @posts.each do |post| %>
     <% if user_signed_in? && current_user.id == post.user_id %>
     <div class="box-post">
@@ -31,6 +29,6 @@
     </div>
     <% end %>
   <% end %>
-<%# ツイート部分 %>
+<%# ポスト部分 %>
 
 </div>
