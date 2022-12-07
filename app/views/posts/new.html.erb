@@ -6,10 +6,11 @@
   </div>
 
   <div class="plant-post-form">
-    <%= form_with model: @post, local: true do |f| %>
+    <%= form_with model: @post, id: "plant-post", local: true do |f| %>
       <div class="plant-post-new">
         <%= f.text_area :text, placeholder: "つぶやき・メモ・アウトプットなど",rows: "6", class: "plant-post-text" %>
       </div>
+      <div id="previews"></div>
       <div class="plant-post-image">
         <div class="text-img-up">画像をアップロード
         </div>
