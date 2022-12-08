@@ -1,11 +1,46 @@
 <%= render "shared/header" %>
 
-<h1>編集ページ</h1>
-
-<%= form_with model: @content, local: true do |f| %>
-  <%= f.file_field :image %>
-  <%= f.text_field :title, placeholder: "タイトル" %>
-  <%= f.text_field :genre, placeholder: "ジャンル" %>
-  <%= f.text_field :memo, placeholder: "メモやコメントなど", maxlength: "200" %>
-  <%= f.submit "投稿する" %>
-<% end %>
+<div class="box-new-content">
+  <div class="new-content-main">
+    <h2 class="new-content-main-title">コンテンツ編集</h2>
+  </div>
+  <div class="box-new-content-form">
+    <%= form_with model: @content, id: "plant-post",local: true do |f| %>
+      <div class="new-img-upload">
+        <div class="weight-bold-text">コンテンツ画像
+        </div>
+        <div class="click-upload">
+          <p>写真や表紙、ジャケットなどをアップロード</p>
+          <label>
+            <%= f.file_field :image,class:"btn-select-image" %>ファイルを選択
+          </label>
+        </div>
+      </div>
+      <div class="new-content-form">
+        <div class="weight-bold-text">タイトル
+        <span class="required">必須</span>
+        </div>
+        <div class="new-form">
+          <%= f.text_field :title, placeholder: "タイトル", class:"form-new-content"%>
+        </div>
+      </div>
+      <div class="new-content-form">
+        <div class="weight-bold-text">ジャンル
+        <span class="required">必須</span>
+        </div>
+        <div class="new-form">
+          <%= f.text_field :genre, placeholder: "ジャンル", class:"form-new-content" %>
+        </div>
+      </div>
+      <div class="new-content-form">
+        <div class="weight-bold-text">メモ
+        </div>
+        <div class="new-form">
+          <%= f.text_area :memo, placeholder: "メモやコメントなど (最大60文字)", rows: 2, maxlength: "60", class:"form-new-content" %>
+        <div class="box-btn-submit">
+            <%= f.submit "投稿する", class:"btn-submit" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
