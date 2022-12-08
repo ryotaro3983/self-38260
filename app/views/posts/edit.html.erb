@@ -1,9 +1,6 @@
 <%= render "shared/header" %>
 
 <div class="box-post-plant">
-  <div class="plant-post-main">
-    <h2 class="plant-post-title">つぶやき投稿</h2>
-  </div>
 
   <div class="plant-post-form">
     <%= form_with model: @post, id: "plant-post", local: true do |f| %>
@@ -18,7 +15,7 @@
         </label>
       </div>
       <div class="plant-post-submit">
-        <%= f.submit "投稿する", class:"btn-submit" %>
+        <%= f.submit "更新", class:"btn-submit" %>
       </div>
     <% end %>
   </div>

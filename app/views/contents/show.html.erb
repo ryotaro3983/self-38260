@@ -1,41 +1,46 @@
 <%= render "shared/header" %>
 
-<div class="content-show">
-  <div class="content-image-area">
-    <% if @content.image.attached? %>
-      <%= image_tag(@content.image, class:"content-image")%>
-    <% else %>
-      <%= image_tag("dummy_image.jpg", class:"dummy-image")%>
-    <% end %>
-  </div>
-  <div class="content_lists">
-    <ul class="content_list">
-      <li><%= @content.title %></li>
-      <li>ジャンル：<%= @content.genre %></li>
-      <li>コメント：<%= @content.memo %></li>
-    </ul>
-    <%= link_to "編集", edit_content_path(@content.id) %>
-    <%= link_to "削除", content_path(@content.id), method: :delete %>
-  </div>
+<div class="box-main-content">
 
-  <div class="reviews-area">
-    <h4>レビュー投稿フォーム</h4>
-    <div class="review-form">
-      <%= form_with model: [@content, @review], local: true do |f| %>
-        <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など"%>
-        <%= f.submit "投稿する" %>
+  <div class="box-show-content">
+
+    <div class="content-show-img">
+      <% if @content.image.attached? %>
+        <%= image_tag(@content.image, class:"content-image")%>
+      <% else %>
+        <%= image_tag("dummy_image.jpg", class:"content-image")%>
       <% end %>
     </div>
-    
-    <h4>レビュー 一覧</h4>
-    <div class="reviews">
-      <div class="review">
-        <% @content.reviews.each do |review| %>
-          <p><%= review.comment %></p>
-          <span><%= link_to "編集", edit_content_review_path(@content.id,review.id) %></span>
-          <span><%= link_to "削除", content_review_path(@content.id,review.id), method: :delete %></span>
-        <% end %>
+    <div class="content_lists">
+      <p class="create-date-content">作成日: <%= @content.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      <ul class="show-content_list">
+        <li class="show-content-title"><%= @content.title %></li>
+        <li>ジャンル： <span class="show-content-sub"><%= @content.genre %></span></li>
+        <li><span class="show-content-sub"><%= @content.memo %></span></li>
+      </ul>
+      <div class="content-edit">
+        <span><%= link_to "編集", edit_content_path(@content.id) %></span>
+        <span><%= link_to "削除", content_path(@content.id), method: :delete %></span>
       </div>
+    </div>
+
+    <div class="reviews-area">
+        <%= form_with model: [@content, @review],id:"plant-new-review", local: true do |f| %>
+          <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など", rows: 5%>
+          <%= f.submit "投稿する", id:"btn-review-send" %>
+        <% end %>
+
+      <h4>レビュー 一覧</h4>
+      <div class="reviews">
+        <div class="review">
+          <% @content.reviews.each do |review| %>
+            <p><%= review.comment %></p>
+            <span><%= link_to "編集", edit_content_review_path(@content.id,review.id) %></span>
+            <span><%= link_to "削除", content_review_path(@content.id,review.id), method: :delete %></span>
+          <% end %>
+        </div>
+      </div>
+
     </div>
 
   </div>

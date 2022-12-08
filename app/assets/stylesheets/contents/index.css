@@ -8,7 +8,7 @@
 
 .content {
   width: 300px;
-  height: 460px;
+  height: 430px;
   border: 1px solid #000000;
   border-radius: 3px;
   margin: 25px;
@@ -17,19 +17,14 @@
 }
 
 .content-image-area {
-  width: 300px;
   height: 300px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: relative;
 }
 
 .content-image {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0px;
   height: 100%;
   width: 100%;
   object-fit: contain;
@@ -40,8 +35,9 @@
   height: auto;
   object-fit: contain;
 } */
-.content_list {
+.content_lists {
   border-top: 1px solid #000000;
+  padding: 15px 0 5px
 }
 
 .content_list a{

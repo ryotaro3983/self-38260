@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const fileField = document.querySelector('input[type="file"][name="post[image]"]');
   fileField.addEventListener('change', function (e){
-    
+
     const alreadyPreview = document.querySelector('.preview');
     if (alreadyPreview) {
       alreadyPreview.remove();

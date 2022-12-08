@@ -1,14 +1,12 @@
 <%= render "shared/header" %>
 
 <div class="box-new-content">
-  <div class="new-content-main">
-    <h2 class="new-content-main-title">コンテンツ登録</h2>
-  </div>
   <div class="box-new-content-form">
     <%= form_with model: @content, id: "plant-post",local: true do |f| %>
       <div class="new-img-upload">
         <div class="weight-bold-text">コンテンツ画像
         </div>
+        <div id="previews"></div>
         <div class="click-upload">
           <p>写真や表紙、ジャケットなどをアップロード</p>
           <label>
