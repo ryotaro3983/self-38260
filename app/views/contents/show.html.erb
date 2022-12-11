@@ -25,21 +25,31 @@
     </div>
 
     <div class="reviews-area">
-        <%= form_with model: [@content, @review],id:"plant-new-review", local: true do |f| %>
-          <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など", rows: 5%>
+      <div class="review-form">
+        <%= form_with model: [@content, @review], local: true do |f| %>
+          <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など", id:"input-review", rows: 5%>
           <%= f.submit "投稿する", id:"btn-review-send" %>
         <% end %>
+      </div>
+      
+      <h4 class="item-para">レビュー</h4>
 
-      <h4>レビュー 一覧</h4>
-      <div class="reviews">
-        <div class="review">
+      <% if @content.reviews.exists? %>
+        <div class="reviews">
           <% @content.reviews.each do |review| %>
-            <p><%= review.comment %></p>
-            <span><%= link_to "編集", edit_content_review_path(@content.id,review.id) %></span>
-            <span><%= link_to "削除", content_review_path(@content.id,review.id), method: :delete %></span>
+            <div class="review">
+              <p class="date-post"><%= review.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+              <p><%= safe_join(review.comment.split("\n"),tag(:br)) %></p>
+              <div class="btn-option">
+                <span><%= link_to "編集", edit_content_review_path(@content.id,review.id) %></span>
+                <span><%= link_to "削除", content_review_path(@content.id,review.id), method: :delete %></span>
+              </div>
+            </div>
           <% end %>
         </div>
-      </div>
+      <% else%>
+        <h4>まだレビューはありません</h4>
+      <% end %>
 
     </div>
 

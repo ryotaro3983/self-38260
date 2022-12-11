@@ -16,7 +16,6 @@
 
 .content-show-img {
   height: 400px;
-  background-color: aquamarine;
   margin: 10px 20px;
   position: relative;
 }
@@ -52,35 +51,39 @@
   margin: 0 20px;
 }
 
-.reviews-area {
-  padding: 20px 10px;
+.review-form {
+  margin: 20px 100px;
 }
-
-#plant-new-review {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* .input-review-text {
-  display: block;
-  background-color: #708090;
-} */
 
 #btn-review-send {
-  width: 100px;
-  height: 70px;
-  margin: 0 auto;
   border-radius: 2px;
+  display: block;
+  width: 70px;
+  margin: 10px 0 10px auto;
 }
 
-#review_comment {
-  display: block;
-  width: 80%;
-  text-align: left;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+#input-review {
+  width: 100%;
   resize: none;
-  font-size: 13px;
-  padding: 10px;
+  border-radius: 3px;
+  padding: 8px;
+}
+
+.reviews {
+  padding: 20px;
+}
+
+.review {
+  border: 1px solid black;
+  border-radius: 7px;
+  margin-top: 15px;
+  padding: 15px 20px;
+  line-height: 5px;
+}
+
+.review p {
+  line-height: 1.3;
+}
+.item-para {
+  margin-left: 30px;
 }
