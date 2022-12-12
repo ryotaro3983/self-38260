@@ -1,11 +1,17 @@
-<div class="post">
-  <div class="post-image-box">
-    <%# <%= image_tag post.image, class: 'post-image' if post.image.attached? %> %>
-  </div>
-
-  <div class="post-text-box">
-    <p><%= @posts.text %></p>
+<div class="box-post">
+  <div class="post">
+    <p class="date-post"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+    <% if post.image.attached? %>
+      <div class="box-post-image">
+        <%= image_tag post.image, class:"post-image" %>
+      </div>
+    <% end %>
+    <div class="post-text-box">
+      <p class="text-post"><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
+      <div class="btn-option">
+        <span><%= link_to "編集", edit_post_path(post.id), class:"btn-dlt"%></span>
+        <span><%= link_to "削除", post_path(post.id), method: :delete %></span>
+      </div>
+    </div>
   </div>
 </div>
-
- <%# 本当は共通のビューをまとめたい %>

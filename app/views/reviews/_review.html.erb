@@ -1,0 +1,12 @@
+<div class="reviews">
+  <% content.reviews.each do |review| %>
+    <div class="review">
+      <p class="date-post"><%= review.created_at.strftime('%Y/%m/%d %H:%M') %></p>
+      <p><%= safe_join(review.comment.split("\n"),tag(:br)) %></p>
+      <div class="btn-option">
+        <span><%= link_to "編集", edit_content_review_path(@content.id,review.id) %></span>
+        <span><%= link_to "削除", content_review_path(@content.id,review.id), method: :delete %></span>
+      </div>
+    </div>
+  <% end %>
+</div>

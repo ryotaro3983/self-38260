@@ -1,0 +1,16 @@
+<div class="content">
+  <div class="content-image-area">
+    <% if content.image.attached? %>
+      <%= link_to image_tag(content.image, class:"content-image"),content_path(content.id) %>
+    <% else %>
+      <%= link_to image_tag("dummy_image.jpg", class:"dummy-image",), content_path(content.id) %>
+    <% end %>
+  </div>
+  <div class="content_lists">
+    <ul class="content_list">
+      <li class="title-content"><%= link_to content.title, content_path(content.id) %></li>
+      <li class="sub-txt-content">ジャンル： <%= content.genre %></li>
+      <li class="sub-txt-content"><%= content.memo %></li>
+    </ul>
+  </div>
+</div>

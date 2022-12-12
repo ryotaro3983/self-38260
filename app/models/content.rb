@@ -4,6 +4,6 @@ class Content < ApplicationRecord
   validates :memo, length: { maximum: 200 }
 
   belongs_to :user
-  has_many :reviews
+  has_many :reviews, -> { order(created_at: :desc) }, dependent: :destroy
   has_one_attached :image
 end

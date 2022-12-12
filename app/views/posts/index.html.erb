@@ -5,30 +5,10 @@
   <div class="btn-new-post">
     <%= link_to "投稿する", new_post_path %>
   </div>
-  <%# <%= render partial: "post" %>
 
-<%# ポスト部分 %>
   <% @posts.each do |post| %>
     <% if user_signed_in? && current_user.id == post.user_id %>
-    <div class="box-post">
-      <div class="post">
-        <p class="date-post"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
-        <% if post.image.attached? %>
-          <div class="box-post-image">
-            <%= image_tag post.image, class:"post-image" %>
-          </div>
-        <% end %>
-        <div class="post-text-box">
-          <p class="text-post"><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
-          <div class="btn-option">
-            <span><%= link_to "編集", edit_post_path(post.id), class:"btn-dlt"%></span>
-            <span><%= link_to "削除", post_path(post.id), method: :delete %></span>
-          </div>
-        </div>
-      </div>
-    </div>
+      <%= render partial: "post", locals:{post: post} %>
     <% end %>
   <% end %>
-<%# ポスト部分 %>
-
 </div>
