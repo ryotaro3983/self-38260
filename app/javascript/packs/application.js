@@ -8,6 +8,9 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../preview")
+require('jquery')
+require("../move_top")
+
 // require("../delete_check")
 // require("../post")
 
