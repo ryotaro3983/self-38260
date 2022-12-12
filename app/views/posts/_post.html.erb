@@ -1,4 +1,4 @@
-<div class="box-post">
+<div class="box-post" id="post-id-<%= post.id %>">
   <div class="post">
     <p class="date-post"><%= post.created_at.strftime('%Y/%m/%d %H:%M') %></p>
     <% if post.image.attached? %>
@@ -9,8 +9,8 @@
     <div class="post-text-box">
       <p class="text-post"><%= safe_join(post.text.split("\n"),tag(:br)) %></p>
       <div class="btn-option">
-        <span><%= link_to "編集", edit_post_path(post.id), class:"btn-dlt"%></span>
-        <span><%= link_to "削除", post_path(post.id), method: :delete %></span>
+        <span><%= link_to "編集", edit_post_path(post.id), class:"btn-edit"%></span>
+        <span><%= link_to "削除", post_path(post.id), method: :delete, class:"btn-delete",data: { confirm: '削除しますか？' } %></span>
       </div>
     </div>
   </div>

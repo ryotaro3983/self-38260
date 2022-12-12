@@ -20,7 +20,7 @@
       </ul>
       <div class="content-edit">
         <span><%= link_to "編集", edit_content_path(@content.id) %></span>
-        <span><%= link_to "削除", content_path(@content.id), method: :delete %></span>
+        <span><%= link_to "削除", content_path(@content.id), method: :delete,data: { confirm: 'コンテンツ・及びコメント全てが削除されます、よろしいですか？' } %></span>
       </div>
     </div>
 
