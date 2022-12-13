@@ -1,7 +1,6 @@
 <%= render "shared/header" %>
 
 <div class="box-posts">
-
   <div class="btn-new-post">
     <%= link_to "投稿する", new_post_path %>
   </div>
@@ -12,3 +11,9 @@
     <% end %>
   <% end %>
 </div>
+
+<span id="back">
+  <a href="">
+    <%= image_tag asset_path('arrow_to_top.png'), data: {"turbolinks"=>false}, class:"arrow" %>
+  </a>
+</span>

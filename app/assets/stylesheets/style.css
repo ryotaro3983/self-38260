@@ -1,3 +1,7 @@
+body {
+  background-color: #fffaf0;
+}
+
 input[type="file"] {
   display: none;
 }
@@ -6,4 +10,19 @@ input[type="file"] {
   margin-left: 30px;
   width: 300px;
   object-fit: cover;
+}
+
+#back {
+  position: fixed;
+  right: 5px;
+  bottom: 20px;
+}
+
+.arrow {
+  width: 30px;
+  height: 30px;
+}
+
+.field_with_errors {
+  display: contents;
 }
