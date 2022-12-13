@@ -1,59 +1,156 @@
-# テーブル設計
-
-## users テーブル
-
-| Column             | Type   | Options                   |
-| ------------------ | ------ | ------------------------- |
-| nickname           | string | null: false               |
-| email              | string | null: false, unique: true |
-| encrypted_password | string | null: false               |
-| profile            | string |                           |
-
-### Association
-
-- has_many :posts
-- has_many :contents
-- has_many :reviews
+# アプリケーション名
+「Self」
 
 
-## posts テーブル
+# アプリケーション概要
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| text     | text       | null: false                    |
-| user     | references | null: false, foreign_key: true |
+・シェア機能の無い投稿アプリ
 
-### Association
+- つぶやき投稿
 
-- belongs_to :user
-- has_one_attached :image
+  文章や画像の投稿ができます。投稿後は縦並びに一覧表示されます。
 
+- コンテンツ保存機能
 
-## contents テーブル
+  画像・タイトル・ジャンルを入力し保存、その後各コンテンツにレビューを投稿できます。
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| title    | string     | null: false                    |
-| genre    | string     | null: false                    |
-| memo     | string     |                                |
-| user     | references | null: false, foreign_key: true |
+- つぶやきとコンテンツ、レビューはそれぞれ編集・削除を行えます。
 
-### Association
+- ユーザー登録機能を持ちます
 
-- has_many :reviews
-- has_one_attached :image
-- belongs_to :user
+- 他のユーザーの投稿を見ることはできず、公開することもできません。
 
 
-## reviews テーブル
+# URL
+https://self-38260.onrender.com
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| comment  | text       | null: false                    |
-| user     | references | null: false, foreign_key: true |
-| content  | references | null: false, foreign_key: true |
+## テスト用アカウント
+Basic認証
 
-### Associations
+ID : admin
 
-- belongs_to :user
-- belongs_to :content
+password :25253983
+
+動作確認用アカウント
+
+email : test001@email.com
+
+password : 12345a
+
+
+# 利用方法
+
+- ユーザー登録が必須となっています、まずはじめにアカウントを作成してください。
+
+- つぶやき機能
+
+	「投稿する」ボタンから 投稿ページへ遷移します。
+
+	テキストの入力と画像の選択後(画像は任意)、投稿ボタンで保存できます。
+
+	投稿後はトップページにて一覧形式で表示されます。
+
+- コンテンツ機能
+
+	一覧ページの「作成する」ボタンから、投稿ページへ遷移します。
+
+	投稿後は一覧形式で表示されます。
+
+	画像(任意)・タイトル・ジャンル・メモ(任意)を入力し、コンテンツを保存できます。
+
+- レビュー機能
+
+	コンテンツ一覧ページから、保存済みのコンテンツの画像またはタイトルをクリックして詳細画面へ遷移します。
+
+	詳細画面の下部のレビュー投稿フォームから、コンテンツについてのコメントが投稿できます。
+
+- 各投稿データは、投稿後編集・削除が行なえます。
+
+- 写真の投稿や日記、本の感想を投稿する本棚にしたり、料理のレシピを保存する等、ある程度ユーザーの自由な目的で利用することができます。
+
+
+
+# 作成した背景
+
+## 対象
+
+Z世代の人
+* 性別：男女
+* 年齢：10代なかば~20代後半あたり
+* 職業：学生~社会人 様々
+* 趣味：ほとんどの人がSNSを利用しています。一番多く利用されているのはInstagram、続いてTwitterだそう。Z世代にとっては調べ物は検索エンジンよりもSNSツールを利用する割合のほうが多いデータもあるほどZ世代にとっては日常生活で必須のツールとなっています。
+
+## 抱える課題
+
+利用者の5割以上が「SNS疲れ」の状態、女性の割合は61%に登ります。
+
+理由としての多くは「他人の投稿内容と自分との比較」、次いで「いいねや共感のコメントが得られるかの不安」「自分がどのような投稿をすれば良いかわからない」といったものでした。
+
+他にも多くの疲れの理由を持っています。
+
+他者とのつながりに疲れを感じ、一人でも時間つぶしがしやすくなるスマホを活かして一人行動をしたいと思っている人が多く存在します。
+
+[マイナビニュース - (NRI生活者年末ネット調査2021/12)](https://news.mynavi.jp/article/20220211-2270323/)
+
+一言でいうと、SNS疲れの原因は他人と干渉しない自分だけの居場所の減少といえるのではないでしょうか。
+
+デジタルデトックスを勧める記事や動画も見受けられるようになってきていますが、とはいえ利便性の観点から電子端末はなかなか手放しにくいです。
+
+アプリの削除も方法の一つですが、SNSツールは情報収集のみに使用するには便利な点もあります。
+
+シェア機能を持たないことで人との比較を止めて、自分は何が好きなのか、自分はどう思うのかだけを考え、自己肯定感を向上させSNS疲れを緩和できる場所を提供したいと思い制作しました。
+
+
+# 洗い出した要件
+スプレッドシート リンク
+※未完成 - 随時更新中
+https://docs.google.com/spreadsheets/d/1xtu2fKdBCGGI2Q4MlRfvUQQecx_Wq1J2YBmQNVNfDHE/edit?usp=sharing
+
+# 実装した機能についての画像やGIF
+
+- つぶやき投稿機能
+
+  テキストと画像を投稿でき、一覧形式で見ることができます。
+  [![Image from Gyazo](https://i.gyazo.com/f2038e70b673145bd16e2a047f89dd77.gif)](https://gyazo.com/f2038e70b673145bd16e2a047f89dd77)
+
+- コンテンツ保存機能
+
+  本なら表紙、ゲームならパッケージ等の画像を選択、タイトルとジャンルを入力し、保存できます。
+  [![Image from Gyazo](https://i.gyazo.com/f385583c2309633042341ab9318cad52.gif)](https://gyazo.com/f385583c2309633042341ab9318cad52)
+
+- コンテンツ用レビュー機能
+
+  保存したコンテンツに対してレビューの投稿ができます。
+  [![Image from Gyazo](https://i.gyazo.com/c2d399b3660cefb598a8567833b8eeab.gif)](https://gyazo.com/c2d399b3660cefb598a8567833b8eeab)
+
+- ユーザー登録状態での挙動変化
+
+  ログアウト状態ではつぶやき、コンテンツは表示されません。
+
+- 他のユーザーの投稿は確認できません。
+
+# データベース設計
+
+[![Image from Gyazo](https://i.gyazo.com/17ecd03e01585b1e1fcd338a18a813be.png)](https://gyazo.com/17ecd03e01585b1e1fcd338a18a813be)
+
+
+
+# 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/27349d1e3a5dc5904c624728d3fcd420.png)](https://gyazo.com/27349d1e3a5dc5904c624728d3fcd420)
+
+# 開発環境
+HTML/CSS/JavaScript/jQuery/Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Code
+
+# ローカルでの動作方法
+※開発中
+
+# 工夫したポイント
+ユーザーにとって使いやすいデザインにすることを意識して制作しました。
+
+見た目のシンプルさや文字の大きさ、ボタンの押しやすさ(大きさなど)に気を配りました。
+
+JavaScriptの知識や技術向上を目指し、投稿・編集・削除機能の非同期通信化を目指しました。
+
+付け加えたい機能に必要だと判断したため、カリキュラムに出てこなかったjQueryをインターネットで基礎的な範囲ですが勉強しました。
+
+※随時追記予定

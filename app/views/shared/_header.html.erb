@@ -12,7 +12,7 @@
         </ul>
         <ul class="menu-right">
           <% if user_signed_in? %>
-            <li><%= link_to "マイページ", user_path(current_user.id), class: "text-header" %></li>
+            <li><%= link_to current_user.nickname, user_path(current_user.id), class: "text-header" %></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "text-header" %></li>
           <% else %>
             <li><%= link_to "ログイン", new_user_session_path, class:"text-heaer" %></li>
