@@ -149,7 +149,7 @@ HTML/CSS/JavaScript/jQuery/Ruby/Ruby on Rails/MySQL/Github/AWS/Visual Studio Cod
 
 見た目のシンプルさや文字の大きさ、ボタンの押しやすさ(大きさなど)に気を配りました。
 
-JavaScriptの知識や技術向上を目指し、投稿・編集・削除機能の非同期通信化を目指しました。
+JavaScriptの知識や技術向上を目指し、投稿・編集・削除機能の非同期通信化を目指しました(現在開発中)。
 
 付け加えたい機能に必要だと判断したため、カリキュラムに出てこなかったjQueryをインターネットで基礎的な範囲ですが勉強しました。
 
