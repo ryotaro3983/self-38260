@@ -33,7 +33,7 @@ password :25253983
 
 動作確認用アカウント
 
-email : test001@email.com
+email : sample001@email.com
 
 password : 12345a
 
