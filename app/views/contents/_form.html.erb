@@ -1,6 +1,7 @@
 <div class="box-new-content">
   <div class="box-new-content-form">
     <%= form_with model: content, id: "plant-post",local: true do |f| %>
+      <%= render 'shared/error_messages', model: f.object %>
       <div class="new-img-upload">
         <div class="weight-bold-text">コンテンツ画像
         </div>

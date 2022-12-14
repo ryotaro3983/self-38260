@@ -7,7 +7,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
 
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
-  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'is invalid. Include both letters and numbers' },
+  validates :password, format: { with: VALID_PASSWORD_REGEX, message: 'に誤りがあります、半角英数字を含めてください' },
                        length: { maximum: 40 }
   has_many :posts
   has_many :contents

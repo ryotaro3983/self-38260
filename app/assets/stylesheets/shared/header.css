@@ -1,5 +1,3 @@
-
-
 .banner {
   display: flex;
   justify-content: space-around;
@@ -23,15 +21,14 @@
   font-size: 20px;
   height: 60px;
   display: flex;
-  justify-content:space-around;
-  align-items: center;
+  justify-content: space-around;
   font-size: 18px;
 }
 
 .menu-left {
+  height: 100%;
+  padding: 0 10px;
   display: flex;
-  list-style: none;
-  margin-left: 10px;
 }
 
 .menu-contents-link {
@@ -46,16 +43,30 @@
 }
 
 .menu-right {
+  height: 100%;
+  padding: 0 10px;
   display: flex;
-  list-style: none;
 }
 
 .text-header {
-  margin-left: 3vw;
+  width: 130px;
+  margin: 0 20px;
+  padding: 21px 0;
   text-decoration: none;
   color: #333333;
 }
 
+.menu-left a {
+  display: block;
+  text-align: center;
+}
+
+.menu-right a{
+  display: block;
+  text-align: center;
+}
+
 .text-header:hover {
-  color: #a9a9a9;
+  color: #808080;
+  background-color: #add8e6;
 }

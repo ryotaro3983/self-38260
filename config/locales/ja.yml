@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ユーザー名
+      post:
+        text: テキスト
+        image: 画像
+      content:
+        title: タイトル
+        genre: ジャンル
+      review:
+        comment: コメント

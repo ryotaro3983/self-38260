@@ -27,7 +27,7 @@
     <div class="reviews-area">
       <div class="review-form">
         <%= form_with model: [@content, @review], local: true do |f| %>
-          <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など", id:"input-review", rows: 5%>
+          <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など", id:"input-review", maxlength:400, rows: 5%>
           <%= f.submit "投稿する", id:"btn-review-send" %>
         <% end %>
       </div>

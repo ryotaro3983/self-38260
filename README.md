@@ -4,7 +4,7 @@
 
 # アプリケーション概要
 
-・シェア機能の無い投稿アプリ
+- シェア機能の無い投稿アプリ
 
 - つぶやき投稿
 
@@ -33,7 +33,7 @@ password :25253983
 
 動作確認用アカウント
 
-email : test001@email.com
+email : sample001@email.com
 
 password : 12345a
 
