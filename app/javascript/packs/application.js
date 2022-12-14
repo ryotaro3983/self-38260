@@ -11,6 +11,7 @@ require("../preview")
 require("../content_preview")
 require('jquery')
 require("../move_top")
+require("../top_nav")
 
 // require("../delete_check")
 // require("../post")

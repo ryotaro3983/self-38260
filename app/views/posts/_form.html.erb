@@ -4,7 +4,7 @@
     <%= render 'shared/error_messages', model: f.object %>
     
     <div class="plant-post-new">
-      <%= f.text_area :text, placeholder: "つぶやき・メモ・アウトプットなど",rows: "6", class: "plant-post-text" %>
+      <%= f.text_area :text, placeholder: "つぶやき・メモ・アウトプットなど(最大200字)",rows: "6", maxlength: 200, class: "plant-post-text" %>
     </div>
     <div id="previews"></div>
     <div class="plant-post-image">

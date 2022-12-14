@@ -31,3 +31,10 @@ input[type="file"] {
   margin: 20px 10px;
   color: #dc143c;
 }
+
+#menu-nav.fixed{
+	position: fixed;
+  z-index: 999;
+  top:0;
+  left:0;
+}

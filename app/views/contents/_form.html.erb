@@ -9,7 +9,7 @@
         <div class="click-upload">
           <p>写真や表紙、ジャケットなどをアップロード</p>
           <label>
-            <%= f.file_field :image,class:"btn-select-image" %>ファイルを選択
+            <%= f.file_field :image,class:"btn-select-image" %>
           </label>
         </div>
       </div>
@@ -18,7 +18,7 @@
         <span class="required">必須</span>
         </div>
         <div class="new-form">
-          <%= f.text_field :title, placeholder: "タイトル", class:"form-new-content"%>
+          <%= f.text_field :title, placeholder: "タイトル(150字まで)", maxlength: "150", class:"form-new-content"%>
         </div>
       </div>
       <div class="new-content-form">
