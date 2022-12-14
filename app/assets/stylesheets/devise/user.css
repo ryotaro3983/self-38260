@@ -130,17 +130,18 @@ form input[type="submit"]:hover {
   text-align: center;
 }
 
-.field p{
+.user-edit-field p{
   margin-bottom: 10px;
 }
 
-.field input {
+.user-edit-field input {
   width: 50%;
   padding: 5px;
 }
 
-.field {
+.user-edit-field {
   text-align: center;
+  margin: 20px 0;
 }
 
 .redirect-btn {
@@ -157,7 +158,7 @@ form input[type="submit"]:hover {
   display: inline-block;
 }
 
-.field textarea {
+.user-edit-field textarea {
   width: 50%;
   padding: 5px;
 }
