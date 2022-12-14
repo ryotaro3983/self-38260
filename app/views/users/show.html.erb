@@ -1,14 +1,21 @@
 <%= render "shared/header" %>
-<h1>about me</h1>
 
-<h3>ユーザー名</h3>
-<%= @user.nickname %>
-<h3>メールアドレス</h3>
-<%= @user.email %>
-<h3>プロフィール</h3>
-<%= @user.profile%>
-<h3>最新投稿</h3>
-<% if @post.present? %>
-  <%= @post.text %>
-  <%= image_tag @post.image.variant(resize: '200x200') if @post.image.attached? %>
-<% end %>
+<div class="profile">
+  <h1>about me</h1>
+
+  <h3>ユーザー名</h3>
+  <%= @user.nickname %>
+  <h3>プロフィール</h3>
+  <%= @user.profile%>
+  <h3>最新のつぶやき</h3>
+  <% if @post.present? %>
+    <%= @post.text %>
+    <%= image_tag @post.image.variant(resize: '200x200') if @post.image.attached? %>
+  <% end %>
+  <div class="user-edit">
+    <% if user_signed_in? && @user == current_user %>
+      <%= link_to "アカウント情報編集", edit_user_registration_path, class: "user-edit-btn" %>
+    <% end %>
+  </div>
+
+</div>
