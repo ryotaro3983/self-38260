@@ -1,5 +1,5 @@
 .btn-new-post a {
-  background-color: #afeeee;
+  background-color: #add8e6;
   width: 40vw;
   height: 50px;
   border-radius: 3px;
@@ -19,7 +19,7 @@
   font-size: 17px;
 }
 
-.box-posts {
+#box-posts {
   /* height: 100%;
   width: 100%; */
   background-color: #fffaf0;
@@ -68,7 +68,6 @@
 }
 
 .text-post {
-  margin-top: 15px;
   padding: 8px 15px;
   line-height: 1.3;
 }

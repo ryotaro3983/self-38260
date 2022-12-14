@@ -4,12 +4,14 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start()
-require("turbolinks").start()
+// require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 require("../preview")
+require("../content_preview")
 require('jquery')
 require("../move_top")
+require("../top_nav")
 
 // require("../delete_check")
 // require("../post")

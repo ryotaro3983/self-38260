@@ -1,7 +1,5 @@
 .box-register {
   height: 100vh;
-  background-color: #f5f5f5;
-
 }
 
 .register-title {
@@ -70,11 +68,6 @@ form input[type="submit"]:hover {
 
 /* ログイン画面 */
 
-.box-login {
-  height: 100vh;
-  background-color: #f5f5f5;
-}
-
 .text-newusr {
   display: flex;
   align-items: center;
@@ -118,5 +111,57 @@ form input[type="submit"]:hover {
 .link-newusr-button {
   width: 80%;
   margin: 0 auto;
+  text-align: center;
+}
+
+
+/* アップデート画面 */
+
+.user-edit-contents {
+  width: calc(100vw - 50%);
+  margin: 80px auto 30px;
+  padding: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.user-edit-contents h1{
+  text-align: center;
+}
+
+.field p{
+  margin-bottom: 10px;
+}
+
+.field input {
+  width: 50%;
+  padding: 5px;
+}
+
+.field {
+  text-align: center;
+}
+
+.redirect-btn {
+  display: block;
+  margin-top: 30px;
+}
+
+.actions {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.user-update-btn{
+  display: inline-block;
+}
+
+.field textarea {
+  width: 50%;
+  padding: 5px;
+}
+
+.redirect-btn {
   text-align: center;
 }
