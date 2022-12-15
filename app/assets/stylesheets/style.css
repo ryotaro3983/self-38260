@@ -1,9 +1,8 @@
+html {
+  width: 100vw;
+}
 body {
   background-color: #fffaf0;
-}
-
-input[type="file"] {
-  /* display: none; */
 }
 
 .preview-image {
@@ -37,4 +36,16 @@ input[type="file"] {
   z-index: 999;
   top:0;
   left:0;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 599px) {
+  html {
+    font-size: 0.3rem;
+  }
 }

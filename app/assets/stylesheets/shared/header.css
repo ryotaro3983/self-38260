@@ -12,7 +12,7 @@
 #menu-nav{
   background-color:#f5fffa;
   height: 60px;
-  width: 100%;
+  width: 100vw;
   border-top: 2px solid #333333;
   border-bottom: 2px solid #333333;
 }
@@ -21,9 +21,35 @@
   font-size: 20px;
   height: 60px;
   display: flex;
-  justify-content: space-around;
-  font-size: 18px;
+  justify-content: space-between;
 }
+
+@media (max-width: 599px) {
+  .menu {
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+  }
+  #menu-nav{
+    padding: 0 10px;
+  }
+  .menu-right li {
+    width: 40%;
+  }
+  .menu-left li {
+    width: 40%;
+  }
+  /* .menu-left a {
+    display: inline;
+    text-align: center;
+  }
+  
+  .menu-right a{
+    display: inline;
+    text-align: center;
+  } */
+}
+
 
 .menu-left {
   height: 100%;
