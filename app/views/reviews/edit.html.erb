@@ -1,6 +1,10 @@
-<div class="review-form">
+<div class="edit-review">
   <%= form_with model: [@content, @review], local: true do |f| %>
-    <%= f.text_area :comment, placeholder: "コメントやレビュー、感想など"%>
-    <%= f.submit "投稿する" %>
+    <div class="edit-review-text">
+      <%= f.text_area :comment, rows: 4, class:"text-review" %>
+    </div>
+    <div class="btn-edit-review">
+      <%= f.submit "更新", class:"btn-review-edit" %>
+    </div>
   <% end %>
 </div>

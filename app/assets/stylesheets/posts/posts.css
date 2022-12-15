@@ -20,18 +20,17 @@
 }
 
 #box-posts {
-  /* height: 100%;
-  width: 100%; */
   background-color: #fffaf0;
   padding-top: 20px;
 }
 
 .box-post {
   width: calc(100vw - 50%);
-  border: 1px solid #000;
+  border: 2px solid #000;
   margin: 15px auto;
   background-color: white;
   border-radius: 5px;
+  box-shadow: 4px 5px 10px -2px rgba(0,0,0,0.6);
 }
 
 .date-post {

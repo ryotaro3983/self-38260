@@ -1,0 +1,25 @@
+.edit-review {
+  width: calc(100vw - 60%);
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  margin: 100px auto 50px;
+  padding: 50px;
+  text-align: center;
+}
+
+.edit-review-text {
+  margin: 0 auto 30px;
+}
+
+.text-review {
+  width: 100%;
+  padding: 5px 3px;
+}
+
+.btn-edit-review {
+  width: 200px;
+  margin: 0 auto;
+  display: inline-block;
+}
+
